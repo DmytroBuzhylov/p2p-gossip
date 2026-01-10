@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package p2p;
+option go_package = "github.com/DmytroBuzhylov/P2PMessenger/internal/proto;internal_pb";
+
+
+message Envelope {
+  bytes data = 1;
+  bytes signature = 2;
+  bytes pub_key = 3;
+}
+
+message MessageData {
+  string message_id = 1;
+  bytes origin_id = 2;
+  bytes target_id = 3;
+  uint64 timestamp = 4;
+  uint32 hop_limit = 5;
+
+  oneof payload {
+    HandshakeInit handshake_init = 6;
+    Ping ping = 7;
+    Ack ack = 8;
+
+    ChatMessage chat_message = 9;
+    PeerList peer_list = 10;
+
+    Transaction transfer = 11;
+    HandshakeResponse handshake_response = 12;
+
+    PeerRequest peer_req = 13;
+    PeerResponse peer_res = 14;
+
+  }
+}
+
+
+message ChatMessage {
+  bytes encrypted_payload = 1;
+}
+
+message Transaction {
+  string asset_id = 1;
+  uint64 amount = 2;
+  string memo = 3;
+}
+
+message HandshakeInit {
+  bytes nonce = 1;
+}
+
+message HandshakeResponse {
+  bytes pub_key = 1;
+  bytes signature = 2;
+  string version = 3;
+}
+
+message Ping {
+  int64 nonce = 1;
+}
+
+message PeerList {
+  message Peer {
+    string id = 1;
+    string last_known_addr = 2;
+  }
+  repeated Peer peers = 1;
+}
+
+message Ack {
+  string ref_message_id = 1;
+}
+
+message PeerInfo {
+  bytes pub_key = 1;
+  string address = 2;
+}
+
+message PeerRequest {
+  uint32 count = 1;
+}
+
+message PeerResponse {
+  repeated PeerInfo peers = 1;
+}
