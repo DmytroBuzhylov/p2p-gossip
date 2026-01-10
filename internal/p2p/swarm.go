@@ -73,7 +73,7 @@ func (s *Swarm) findAndConnectToPeers() {
 		}
 
 		s.mu.RLock()
-		if len(s.activePeers) > 20 {
+		if len(s.activePeers) > s.cfg.MaxConnections {
 			return
 		}
 		s.mu.RUnlock()
