@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package dag;
+option go_package = "github.com/DmytroBuzhylov/echofog-core/internal/p2p/dht/dag;dag";
+
+message PBLink {
+  bytes hash = 1;
+  string name = 2;
+  uint64 tsize = 3;
+}
+
+message PBNode {
+  enum DataType {
+    Raw = 0;
+    File = 1;
+    Directory = 2;
+    Metadata = 3;
+    Symlink = 4;
+    Commit = 5;
+  }
+  DataType type = 1;
+  bytes data = 2;
+  repeated PBLink links = 3;
+  uint64 filesize = 4;
+  repeated uint64 blocksizes = 5;
+}

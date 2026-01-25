@@ -48,6 +48,7 @@ func (s *MessageService) GetSubscribedTypes() []interface{} {
 		(*internal_pb.MessageData_ChatMessage)(nil),
 	}
 }
+
 func (s *MessageService) Send(toPeerPubKey types.PeerPublicKey, data []byte) error {
 	encryptData, err := s.cryptoEngine.Encrypt(data, toPeerPubKey)
 	if err != nil {

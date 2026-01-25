@@ -4,6 +4,7 @@ import (
 	"crypto/ed25519"
 	"crypto/sha256"
 
+	"github.com/DmytroBuzhylov/echofog-core/internal/p2p/dht/dag"
 	"github.com/DmytroBuzhylov/echofog-core/internal/storage"
 	"github.com/DmytroBuzhylov/echofog-core/pkg/api/types"
 )

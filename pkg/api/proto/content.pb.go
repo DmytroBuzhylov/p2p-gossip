@@ -2,17 +2,16 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: api/proto/content.proto
+// source: pkg/api/proto/content.proto
 
 package api_pb
 
 import (
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
-
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -37,7 +36,7 @@ type ContentMessage struct {
 
 func (x *ContentMessage) Reset() {
 	*x = ContentMessage{}
-	mi := &file_api_proto_content_proto_msgTypes[0]
+	mi := &file_pkg_api_proto_content_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -49,7 +48,7 @@ func (x *ContentMessage) String() string {
 func (*ContentMessage) ProtoMessage() {}
 
 func (x *ContentMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_api_proto_content_proto_msgTypes[0]
+	mi := &file_pkg_api_proto_content_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -62,7 +61,7 @@ func (x *ContentMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ContentMessage.ProtoReflect.Descriptor instead.
 func (*ContentMessage) Descriptor() ([]byte, []int) {
-	return file_api_proto_content_proto_rawDescGZIP(), []int{0}
+	return file_pkg_api_proto_content_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ContentMessage) GetPayload() isContentMessage_Payload {
@@ -147,7 +146,7 @@ type SessionInitRequest struct {
 
 func (x *SessionInitRequest) Reset() {
 	*x = SessionInitRequest{}
-	mi := &file_api_proto_content_proto_msgTypes[1]
+	mi := &file_pkg_api_proto_content_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -159,7 +158,7 @@ func (x *SessionInitRequest) String() string {
 func (*SessionInitRequest) ProtoMessage() {}
 
 func (x *SessionInitRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_api_proto_content_proto_msgTypes[1]
+	mi := &file_pkg_api_proto_content_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -172,7 +171,7 @@ func (x *SessionInitRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SessionInitRequest.ProtoReflect.Descriptor instead.
 func (*SessionInitRequest) Descriptor() ([]byte, []int) {
-	return file_api_proto_content_proto_rawDescGZIP(), []int{1}
+	return file_pkg_api_proto_content_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *SessionInitRequest) GetRootHash() []byte {
@@ -208,7 +207,7 @@ type SessionInitResponse struct {
 
 func (x *SessionInitResponse) Reset() {
 	*x = SessionInitResponse{}
-	mi := &file_api_proto_content_proto_msgTypes[2]
+	mi := &file_pkg_api_proto_content_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -220,7 +219,7 @@ func (x *SessionInitResponse) String() string {
 func (*SessionInitResponse) ProtoMessage() {}
 
 func (x *SessionInitResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_api_proto_content_proto_msgTypes[2]
+	mi := &file_pkg_api_proto_content_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -233,7 +232,7 @@ func (x *SessionInitResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SessionInitResponse.ProtoReflect.Descriptor instead.
 func (*SessionInitResponse) Descriptor() ([]byte, []int) {
-	return file_api_proto_content_proto_rawDescGZIP(), []int{2}
+	return file_pkg_api_proto_content_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *SessionInitResponse) GetAccepted() bool {
@@ -274,7 +273,7 @@ type ChunkRequest struct {
 
 func (x *ChunkRequest) Reset() {
 	*x = ChunkRequest{}
-	mi := &file_api_proto_content_proto_msgTypes[3]
+	mi := &file_pkg_api_proto_content_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -286,7 +285,7 @@ func (x *ChunkRequest) String() string {
 func (*ChunkRequest) ProtoMessage() {}
 
 func (x *ChunkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_api_proto_content_proto_msgTypes[3]
+	mi := &file_pkg_api_proto_content_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -299,7 +298,7 @@ func (x *ChunkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChunkRequest.ProtoReflect.Descriptor instead.
 func (*ChunkRequest) Descriptor() ([]byte, []int) {
-	return file_api_proto_content_proto_rawDescGZIP(), []int{3}
+	return file_pkg_api_proto_content_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ChunkRequest) GetSessionId() []byte {
@@ -326,7 +325,7 @@ type ChunkResponse struct {
 
 func (x *ChunkResponse) Reset() {
 	*x = ChunkResponse{}
-	mi := &file_api_proto_content_proto_msgTypes[4]
+	mi := &file_pkg_api_proto_content_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -338,7 +337,7 @@ func (x *ChunkResponse) String() string {
 func (*ChunkResponse) ProtoMessage() {}
 
 func (x *ChunkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_api_proto_content_proto_msgTypes[4]
+	mi := &file_pkg_api_proto_content_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -351,7 +350,7 @@ func (x *ChunkResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChunkResponse.ProtoReflect.Descriptor instead.
 func (*ChunkResponse) Descriptor() ([]byte, []int) {
-	return file_api_proto_content_proto_rawDescGZIP(), []int{4}
+	return file_pkg_api_proto_content_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ChunkResponse) GetData() []byte {
@@ -368,11 +367,11 @@ func (x *ChunkResponse) GetFound() bool {
 	return false
 }
 
-var File_api_proto_content_proto protoreflect.FileDescriptor
+var File_pkg_api_proto_content_proto protoreflect.FileDescriptor
 
-const file_api_proto_content_proto_rawDesc = "" +
+const file_pkg_api_proto_content_proto_rawDesc = "" +
 	"\n" +
-	"\x17api/proto/content.proto\x12\x06api_pb\"\xf9\x01\n" +
+	"\x1bpkg/api/proto/content.proto\x12\x06api_pb\"\xf9\x01\n" +
 	"\x0eContentMessage\x127\n" +
 	"\binit_req\x18\x01 \x01(\v2\x1a.api_pb.SessionInitRequestH\x00R\ainitReq\x128\n" +
 	"\binit_res\x18\x02 \x01(\v2\x1b.api_pb.SessionInitResponseH\x00R\ainitRes\x123\n" +
@@ -399,26 +398,26 @@ const file_api_proto_content_proto_rawDesc = "" +
 	"\x05found\x18\x02 \x01(\bR\x05foundB9Z7github.com/DmytroBuzhylov/echofog-core/api/proto;api_pbb\x06proto3"
 
 var (
-	file_api_proto_content_proto_rawDescOnce sync.Once
-	file_api_proto_content_proto_rawDescData []byte
+	file_pkg_api_proto_content_proto_rawDescOnce sync.Once
+	file_pkg_api_proto_content_proto_rawDescData []byte
 )
 
-func file_api_proto_content_proto_rawDescGZIP() []byte {
-	file_api_proto_content_proto_rawDescOnce.Do(func() {
-		file_api_proto_content_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_api_proto_content_proto_rawDesc), len(file_api_proto_content_proto_rawDesc)))
+func file_pkg_api_proto_content_proto_rawDescGZIP() []byte {
+	file_pkg_api_proto_content_proto_rawDescOnce.Do(func() {
+		file_pkg_api_proto_content_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_pkg_api_proto_content_proto_rawDesc), len(file_pkg_api_proto_content_proto_rawDesc)))
 	})
-	return file_api_proto_content_proto_rawDescData
+	return file_pkg_api_proto_content_proto_rawDescData
 }
 
-var file_api_proto_content_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_api_proto_content_proto_goTypes = []any{
+var file_pkg_api_proto_content_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_pkg_api_proto_content_proto_goTypes = []any{
 	(*ContentMessage)(nil),      // 0: api_pb.ContentMessage
 	(*SessionInitRequest)(nil),  // 1: api_pb.SessionInitRequest
 	(*SessionInitResponse)(nil), // 2: api_pb.SessionInitResponse
 	(*ChunkRequest)(nil),        // 3: api_pb.ChunkRequest
 	(*ChunkResponse)(nil),       // 4: api_pb.ChunkResponse
 }
-var file_api_proto_content_proto_depIdxs = []int32{
+var file_pkg_api_proto_content_proto_depIdxs = []int32{
 	1, // 0: api_pb.ContentMessage.init_req:type_name -> api_pb.SessionInitRequest
 	2, // 1: api_pb.ContentMessage.init_res:type_name -> api_pb.SessionInitResponse
 	3, // 2: api_pb.ContentMessage.chunk_req:type_name -> api_pb.ChunkRequest
@@ -430,12 +429,12 @@ var file_api_proto_content_proto_depIdxs = []int32{
 	0, // [0:4] is the sub-list for field type_name
 }
 
-func init() { file_api_proto_content_proto_init() }
-func file_api_proto_content_proto_init() {
-	if File_api_proto_content_proto != nil {
+func init() { file_pkg_api_proto_content_proto_init() }
+func file_pkg_api_proto_content_proto_init() {
+	if File_pkg_api_proto_content_proto != nil {
 		return
 	}
-	file_api_proto_content_proto_msgTypes[0].OneofWrappers = []any{
+	file_pkg_api_proto_content_proto_msgTypes[0].OneofWrappers = []any{
 		(*ContentMessage_InitReq)(nil),
 		(*ContentMessage_InitRes)(nil),
 		(*ContentMessage_ChunkReq)(nil),
@@ -445,17 +444,17 @@ func file_api_proto_content_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_api_proto_content_proto_rawDesc), len(file_api_proto_content_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_pkg_api_proto_content_proto_rawDesc), len(file_pkg_api_proto_content_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_api_proto_content_proto_goTypes,
-		DependencyIndexes: file_api_proto_content_proto_depIdxs,
-		MessageInfos:      file_api_proto_content_proto_msgTypes,
+		GoTypes:           file_pkg_api_proto_content_proto_goTypes,
+		DependencyIndexes: file_pkg_api_proto_content_proto_depIdxs,
+		MessageInfos:      file_pkg_api_proto_content_proto_msgTypes,
 	}.Build()
-	File_api_proto_content_proto = out.File
-	file_api_proto_content_proto_goTypes = nil
-	file_api_proto_content_proto_depIdxs = nil
+	File_pkg_api_proto_content_proto = out.File
+	file_pkg_api_proto_content_proto_goTypes = nil
+	file_pkg_api_proto_content_proto_depIdxs = nil
 }

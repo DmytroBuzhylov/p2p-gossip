@@ -1,6 +1,7 @@
 package discovery
 
 import (
+	"encoding/hex"
 	"time"
 
 	"github.com/DmytroBuzhylov/echofog-core/internal/network"
@@ -9,6 +10,7 @@ import (
 	internal_pb "github.com/DmytroBuzhylov/echofog-core/internal/proto"
 	"github.com/DmytroBuzhylov/echofog-core/internal/storage"
 	"github.com/DmytroBuzhylov/echofog-core/pkg/api/types"
+	"github.com/DmytroBuzhylov/echofog-core/pkg/dto"
 
 	"github.com/google/uuid"
 )
@@ -114,4 +116,15 @@ func (g *peerGiver) Handle(msg *internal_pb.MessageData, peerID types.PeerID) {
 	}
 
 	g.service.gsp.Broadcast(network.TypeGetPeerResponse, peerResponse)
+}
+
+const PeerAliasKey = "peer:alias:"
+
+func (s *DiscoveryService) SetPeerAlias(id types.PeerID, alias string) error {
+	key := []byte(PeerAliasKey + hex.EncodeToString(id[:]))
+	return s.storage.Set(key, []byte(alias))
+}
+
+func (s *DiscoveryService) GetContactList() ([]dto.ContactDTO, error) {
+	
 }
